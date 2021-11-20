@@ -26,7 +26,6 @@ namespace Module8_FinalProject_1
 
             DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
 
-
             ClearDirectory(directoryInfo, true);
 
         }
@@ -92,7 +91,7 @@ namespace Module8_FinalProject_1
             foreach (FileInfo fi in directoryInfo.GetFiles())
             {
                 TimeSpan timePassed = DateTime.Now.Subtract(fi.LastAccessTime);
-                if (timePassed.Minutes > 30)
+                if (timePassed.TotalMinutes > 30)
                 {
                     try
                     {
